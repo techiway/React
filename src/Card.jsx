@@ -1,8 +1,11 @@
+import axios from "axios";
 import React from "react";
 import styled from "styled-components";
 
-export const Card = ({ img, inStore, discountVal ,discount }) => (
-  <Box img={img}>
+
+export const Card = ({ img, inStore, discountVal ,discount }) => {
+  
+  return <Box img={img}>
     {inStore ? <Header> In-Store </Header> : null}
     {discount ? <Discount>${discountVal}</Discount> : null}
     <Title>
@@ -10,7 +13,7 @@ export const Card = ({ img, inStore, discountVal ,discount }) => (
       <p className="m-l">The Iconic</p> <p className="m-r">ICON</p>
     </Title>
   </Box>
-);
+};
 
 export const Card1 = ({ img, inStore, price ,size }) => (
   // <Box img={img}>
@@ -142,3 +145,8 @@ const Discount = styled.div`
   justify-content: center;
   align-content: center;
 `;
+
+/** To make api call */
+ // React.useEffect(()=>{
+  //   axios.get('https://reqres.in/users').then(req=>console.log(req)).catch(err=>console.log('errrrrrrrr'))
+  // },[])
